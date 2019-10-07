@@ -1,0 +1,274 @@
+/*通用*/
+
+body{
+	background: url(img/bg.jpeg);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	display: block;
+	font-family: "Song", serif;
+	color: #121212;
+}
+
+span{
+	font-family: "Comic Sans MS";
+}
+
+span a{
+	text-decoration: none;
+	color: #323232;
+}
+
+span strong{
+	font-size: 20px;
+}
+
+form div table th{
+	height: 30px;
+}
+
+form div table tr > td{
+	width: 2.5cm;
+	text-align: left;
+}
+
+footer span{
+	position: absolute;
+	right: 1cm;
+	bottom: 0cm;
+	font-family: serif;
+}
+
+input[type="button"]{
+	background: inherit;
+}
+
+#footer{
+	color: white;
+	height: 30px;
+}
+
+.mainDivision{
+	margin: 2px;
+}
+
+/************************************************/
+/* login.html, sign.html */
+
+#languageSelectionSubdivision{
+	margin: 10px;
+	padding: 1px;
+	margin-left: 1cm;
+}
+
+#navigationDivision{
+	height: 30px;
+}
+
+#navigation{
+	text-align: right;
+	position: relative;
+	right: 30px; 
+}
+
+#logoDivision{
+	height: 140px;
+}
+
+#logoSubdivision{
+	position: relative;
+	top: 23%;
+	left: 40%;
+	height: 120px;
+	width: 256px;
+	padding: 1px;
+	display: inline-block;
+	opacity: 0.7;
+}
+
+#logo{
+	background-image: url(img/yousenLogo.png);
+	background-size: 100px 100px;
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+
+#websiteDiscription{
+	text-align: center;
+}
+
+#websiteDiscription h3{
+	font-family: "Arial";
+	font-size: 25px;
+}
+
+#websiteDiscription p{
+	font-family: "Times New Roman";
+	font-size: 14px;
+}
+
+#submitFormSubdivision{
+	position: relative;
+	width: 250px;
+	left: 39%;
+	padding: 10px;
+	background-color: #aaa;
+	opacity: 0.7;
+}
+
+#submitFormSubdivision form{
+	margin: 1px;
+	display: block;
+}
+
+#submitButtonDivision{
+	margin-top: 20px;
+}
+
+#submitButton{
+	display: block;
+	margin: 0.2cm 2.7cm 0.2cm auto;
+	border: 1px solid black;
+}
+
+.submitInput{
+	align-content: center;
+}
+
+/************************************************/
+/* contact.html */
+/* All are in the file contact.html. */
+
+/************************************************/
+/* homepage.html */
+
+#homepageLogoSubdivision{
+	margin: 1cm 10cm auto 10cm;
+	width: 500px;
+	padding: 1px;
+	display: inline-block;
+	opacity: 0.7;
+}
+
+#introductionDivision{
+	display: inline-block;
+	background-color: #121212;
+	opacity: 0.7;
+	color: white;
+	width: 100%;
+}
+
+#portrait{
+	margin: 0.5cm 0.2cm 0.5cm 2cm;
+	background-image: url(img/yu.jpeg);
+	background-size: 250px, 210px;
+	width: 250px;
+	height: 210px;
+	float: left;
+}
+
+
+#introductionSubdivision{
+	font-size: 15px;
+	text-indent: 33px;
+	margin: 0.2cm 1cm auto 1cm;
+	width: 10cm;
+	background-color: #333;
+	padding: 0.1cm;
+	float: left;
+}
+
+
+#introductionSubdivision article h1{
+	text-indent: 0px;
+	line-height: 20px;
+	text-align: center;
+}
+
+#experience{
+	font-family: "Hei";
+	font-size: 15px;
+	float: left;
+	width: 6.6cm;
+	text-align: left;
+	line-height: 30px;
+	background-color: #333;
+	padding: 0.3cm, 0.3cm, 0.3cm, auto;
+	margin: 0.4cm 0.3cm auto 1.3cm;
+}
+
+#experience h2{
+	text-align: center;
+}
+
+#experience ul{
+	list-style-type: circle;
+}
+
+#interactionDivision{
+	font: white;
+	background-color: #121212;
+	display: inline-block;
+	opacity: 0.7;
+	width: 100%;
+}
+
+#commentSubdivision{
+	background-color: #333;
+	width: 15cm;
+	float: left;
+	text-align: 
+}
+
+#commentSubdivision{
+	margin: 5px;
+	color: #EEE;
+	background-color: #333;
+	width: 15cm;
+	float: left;
+	text-align: 
+}
+
+#commentSubdivision h1{
+	text-align: center;
+	font-family: "Hei";
+	line-height: 12px;
+	font-size: 20px;
+}
+
+#latest h3{
+	text-indent: 30px;
+	font-size: 13px;
+}
+
+#latest p{
+	text-indent: 30px;
+}
+
+#commentMakerSubdivision{
+	color: white;
+	display: block;
+	float: right;
+	margin: 2px;
+	padding: 10px;
+}
+
+#commentButton{
+	margin: auto 3cm auto auto;
+}
+
+#avatar{
+	position: relative;
+	top: 10px;
+	left: 10px;
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+/************************************************/
+/* 调试 
+
+div{
+	border: 1px solid red !important;
+}*/

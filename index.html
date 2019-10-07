@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>优森的个人主页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="homepage.css">
+	<script type="text/javascript">
+		window.alert("欢迎访问优森的个人主页！")
+		
+		var str = document.location.href;
+		var thisID = str.split("=")[1].split("&")[0];
+		var isPersonal = str.split("=")[2];
+		document.getElementById("commenter").value = thisID;
+
+		function comment(){
+			var remark = document.getElementById("commentText").value;
+			var commenter = document.getElementById("commenter").value;
+			var idLine = document.getElementById("latestID");
+			var remarkLine = document.getElementById("latestRemark");
+			if(remark !== ""){
+				if(commenter === "")
+					idLine.innerHTML = "id: 匿名用户";
+				else
+					idLine.innerHTML = "id: " + commenter;
+				if(window.isPersonal==true){
+					alert(typeof window.isPersonal);
+					document.getElementById("avatar").src="img/yuAvatar.jpg"
+					idLine.innerHTML += "(本人)";
+				}else
+					document.getElementById("avatar").src="img/mikaelAvatar.jpeg"
+				idLine.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间:" + getDate();
+				remarkLine.innerHTML = remark;
+			}
+		}
+
+		function getDate(){
+			var date = Date().split(" ");
+			var month = {"Jan": "1", "Feb": "2", "Mar": "3", "Apr": "4", "May": "5", "Jun": "6", "Jul": "7", "Aug": "8", "Sep": "9", "Oct": "10", "Nov": "11", "Dec": "12"}
+			return " 北京时间 " + date[3] + "年" + month[date[1]] + "月" + date[2] + "日 " + date[4];
+		}
+	</script>
+</head>
+
+<body>
+	<div id="languageSelectionDivision" class="mainDivision">
+		<div id="languageSelectionSubdivision">
+			<select onchange="if(this.options[this.options.selectedIndex].value=='English'){window.alert('英文网站正在建设中！ \nEnglish website is under construction!')}">
+				<option value='Chinese'>中文</option>
+				<option value='English'>English</option>
+			</select>
+		</div>
+	</div>
+
+	<div id="navigationDivision" class="mainDivision">
+		<div id="navigation">
+			<span>
+				<a href="index.html"><span onclick="window.alert('静态网页是无法登入登出哈哈哈哈')">登出</span></a> 
+				<strong>主页</strong> 
+			</span>
+		</div>
+	</div>
+
+	<div id="homepageLogoDivision" class="mainDivision">
+		<div id="homepageLogoSubdivision">
+			<div id="logo"></div>
+			<div id="websiteDiscription">
+				<h3>YOUSEN'S HOMEPAGE</h3>
+			</div>
+		</div>
+	</div>
+
+	<div id="introductionDivision" class="mainDivision">
+		<div id="portrait">
+		</div>
+		<div id="introductionSubdivision">
+			<article>
+				<h1>简介</h1>
+				<p>优森是一为来自湖南省岳阳市的大学生，目前就读于浙江大学计算机学院软件工程专业。这个代号的由来是其真实名字的日语音读罗马字的拼音化，兼取“学则优异，思则森沉”之意。</p>
+				<p>但不能否认的是，他目前还是一个被公认的菜鸡，企及大佬还需要疯狂学习。</p>
+			</article>
+		</div>
+		<div id="experience">
+			<h2>教育经历</h2>
+			<ul>
+				<li>2006-2012 岳阳市枫树小学</li>
+				<li>2012-2015 岳阳市第十中学</li>
+				<li>2015-2018 岳阳市第一中学</li>
+				<li>2018- 浙江大学</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="interactionDivision" class="mainDivision">
+		<div id="commentSubdivision">
+			<h1>留言</h1><hr>
+			<div id="latest" class="remark">
+				<img src="img/smAvatar.jpg" id="avatar">
+				<h3 id="latestID">id: sm聚聚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间：北京时间 2019年10月7日 19:12:26</h3>
+				<p id="latestRemark">精品课程我带你飞！</p>
+			</div>
+		</div>
+		<div id="commentMakerSubdivision">
+			<form>
+				自定义id:&nbsp;
+				<input type="text" id="commenter" onfocus="this.value=''" onblur="if(this.value=='')this.value=thisID">
+				<hr>
+				<textarea cols="88" rows="4" id="commentText" placeholder="请输入评论"></textarea><hr>
+				<input type="button" id="commentButton" value="评论" name="commentButton" onclick="comment()" style="background-color: white">
+			</form>
+		</div>
+	</div>
+
+	<div id="footerDivision" class="mainDivision">
+		<div id="footer">
+			<footer>
+				<span>&copy;Yousen</span>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
