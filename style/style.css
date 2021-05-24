@@ -109,7 +109,8 @@ input[type="button"]{
     margin: 0.5rem;
     color: #EEE;
     background-color: #333;
-    width: 40rem;
+    min-width: 40vw;
+    display: flex;
 }
 
 #commentSubdivision h1{
@@ -133,14 +134,15 @@ input[type="button"]{
 #latest{
     display: flex;
     flex-direction: row;
+
 }
 
-#latest h3{
+#latestContainer h3{
     text-indent: 4ch;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
-#latest p{
+#latestContainer p{
     text-indent: 4ch;
 }
 
