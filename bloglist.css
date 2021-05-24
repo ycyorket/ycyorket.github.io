@@ -1,0 +1,23 @@
+#blogListDivision {
+    display: inline-block;
+    background-color: #121212;
+    opacity: 0.7;
+    color: white;
+    width: 100%;
+}
+
+#blogList {
+    font-size: 15px;
+    text-indent: 33px;
+    margin: 0.2cm 1cm auto 1cm;
+    width: 10cm;
+    background-color: #333;
+    padding: 0.1cm;
+    float: left;
+}
+
+#blogList article h1 {
+    text-indent: 0px;
+    line-height: 20px;
+    text-align: center;
+}

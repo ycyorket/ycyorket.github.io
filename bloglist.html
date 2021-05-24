@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>优森的个人主页</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <link rel="stylesheet" type="text/css" href="bloglist.css">
+    <script type="text/javascript">
+    </script>
+</head>
+
+<body>
+<div id="languageSelectionDivision" class="mainDivision">
+    <div id="languageSelectionSubdivision">
+        <select onchange="if(this.options[this.options.selectedIndex].value=='English'){window.alert('英文网站正在建设中！ \nEnglish website is under construction!')}">
+            <option value='Chinese'>中文</option>
+            <option value='English'>English</option>
+        </select>
+    </div>
+</div>
+
+<div id="navigationDivision" class="mainDivision">
+    <div id="navigation">
+            <span>
+				<a href="index.html"><span onclick="window.alert('静态网页是无法登入登出的')">登出</span></a>
+            <strong>主页</strong>
+            <a href="bloglist.html"><span>博文</span></a>
+            </span>
+    </div>
+</div>
+
+<div id="homepageLogoDivision" class="mainDivision">
+    <div id="homepageLogoSubdivision">
+        <div id="logo"></div>
+        <div id="websiteDiscription">
+            <h3>YOUSEN'S BLOGS</h3>
+        </div>
+    </div>
+</div>
+
+<div id="blogListDivision" class="mainDivision">
+    <div id="portrait">
+    </div>
+    <div id="blogList">
+        <article>
+            <h1>HTML与CSS</h1>
+            <p>CSS选择器</p>
+            <h1>Javascript</h1>
+            <p>Promise初探</p>
+            <h1>React</h1>
+            <p>React生命周期</p>
+            <h1>网络</h1>
+            <p>常见状态码</p>
+        </article>
+    </div>
+</div>
+
+<div id="interactionDivision" class="mainDivision">
+    <div id="commentSubdivision">
+        <h1>留言</h1>
+        <hr>
+        <div id="latest" class="remark">
+            <img src="img/smAvatar.jpg" id="avatar">
+            <h3 id="latestID">id: sm聚聚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间：北京时间 2019年10月7日 19:12:26</h3>
+            <p id="latestRemark">精品课程我带你飞！</p>
+        </div>
+    </div>
+    <div id="commentMakerSubdivision">
+        <form>
+            自定义id:&nbsp;
+            <input type="text" id="commenter" onfocus="this.value=''" onblur="if(this.value=='')this.value=thisID">
+            <hr>
+            <textarea cols="88" rows="4" id="commentText" placeholder="请输入评论"></textarea>
+            <hr>
+            <input type="button" id="commentButton" value="评论" name="commentButton" onclick="comment()" style="background-color: white">
+        </form>
+    </div>
+</div>
+
+<div id="footerDivision" class="mainDivision">
+    <div id="footer">
+        <footer>
+            <span>&copy;Yousen</span>
+        </footer>
+    </div>
+</div>
+</body>
+
+</html>
