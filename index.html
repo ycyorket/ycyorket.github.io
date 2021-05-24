@@ -1,50 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
 	<title>优森的个人主页</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="homepage.css">
+	<link rel="stylesheet" type="text/css" href="style/homepage.css">
+	<script type="text/javascript" src="script/util.js"></script>
 	<script type="text/javascript">
-		window.alert("欢迎访问优森的个人主页！")
-		
-		var str = document.location.href;
-		var thisID = str.split("=")[1].split("&")[0];
-		var isPersonal = str.split("=")[2];
-		document.getElementById("commenter").value = thisID;
 
-		function comment(){
-			var remark = document.getElementById("commentText").value;
-			var commenter = document.getElementById("commenter").value;
-			var idLine = document.getElementById("latestID");
-			var remarkLine = document.getElementById("latestRemark");
-			if(remark !== ""){
-				if(commenter === "")
-					idLine.innerHTML = "id: 匿名用户";
-				else
-					idLine.innerHTML = "id: " + commenter;
-				if(window.isPersonal==true){
-					alert(typeof window.isPersonal);
-					document.getElementById("avatar").src="img/yuAvatar.jpg"
-					idLine.innerHTML += "(本人)";
-				}else
-					document.getElementById("avatar").src="img/mikaelAvatar.jpeg"
-				idLine.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间:" + getDate();
-				remarkLine.innerHTML = remark;
-			}
-		}
-
-		function getDate(){
-			var date = Date().split(" ");
-			var month = {"Jan": "1", "Feb": "2", "Mar": "3", "Apr": "4", "May": "5", "Jun": "6", "Jul": "7", "Aug": "8", "Sep": "9", "Oct": "10", "Nov": "11", "Dec": "12"}
-			return " 北京时间 " + date[3] + "年" + month[date[1]] + "月" + date[2] + "日 " + date[4];
-		}
 	</script>
 </head>
 
 <body>
 	<div id="languageSelectionDivision" class="mainDivision">
 		<div id="languageSelectionSubdivision">
-			<select onchange="if(this.options[this.options.selectedIndex].value=='English'){window.alert('英文网站正在建设中！ \nEnglish website is under construction!')}">
+			<label for="language"></label>
+			<select id="language" onchange="if(this.options[this.options.selectedIndex].value==='English'){window.alert('英文网站正在建设中！ \nEnglish website is under construction!')}">
 				<option value='Chinese'>中文</option>
 				<option value='English'>English</option>
 			</select>
@@ -54,8 +24,8 @@
 	<div id="navigationDivision" class="mainDivision">
 		<div id="navigation">
 			<span>
-				<a href="index.html"><span onclick="window.alert('静态网页是无法登入登出哈哈哈哈')">登出</span></a> 
-				<strong>主页</strong> 
+				<strong>主页</strong>
+				<a href="bloglist.html"><span>博文</span></a>
 			</span>
 		</div>
 	</div>
@@ -63,7 +33,7 @@
 	<div id="homepageLogoDivision" class="mainDivision">
 		<div id="homepageLogoSubdivision">
 			<div id="logo"></div>
-			<div id="websiteDiscription">
+			<div id="websiteDescription">
 				<h3>YOUSEN'S HOMEPAGE</h3>
 			</div>
 		</div>
@@ -92,19 +62,27 @@
 
 	<div id="interactionDivision" class="mainDivision">
 		<div id="commentSubdivision">
-			<h1>留言</h1><hr>
+			<h1>留言</h1>
+			<hr>
 			<div id="latest" class="remark">
-				<img src="img/smAvatar.jpg" id="avatar">
-				<h3 id="latestID">id: sm聚聚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间：北京时间 2019年10月7日 19:12:26</h3>
-				<p id="latestRemark">精品课程我带你飞！</p>
+				<div id="avatarContainer">
+					<img src="asset/smAvatar.jpg" alt="sm's avatar" id="avatar">
+				</div>
+				<div id="latestContainer">
+					<h3 id="latestID">id: sm聚聚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间：北京时间 2019年10月7日 19:12:26</h3>
+					<p id="latestRemark">精品课程我带你飞！</p>
+				</div>
 			</div>
 		</div>
 		<div id="commentMakerSubdivision">
 			<form>
 				自定义id:&nbsp;
-				<input type="text" id="commenter" onfocus="this.value=''" onblur="if(this.value=='')this.value=thisID">
+				<label for="commenter"></label>
+				<input type="text" id="commenter" onfocus="this.value=''" onblur="if(this.value==='')this.value='匿名用户'">
 				<hr>
-				<textarea cols="88" rows="4" id="commentText" placeholder="请输入评论"></textarea><hr>
+				<label for="commentText"></label>
+				<textarea cols="88" rows="4" id="commentText" placeholder="请输入评论"></textarea>
+				<hr>
 				<input type="button" id="commentButton" value="评论" name="commentButton" onclick="comment()" style="background-color: white">
 			</form>
 		</div>

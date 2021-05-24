@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>XSS攻击</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../style/blog.css">
+    <script type="text/javascript" src="../../script/util.js"></script>
+    <script type="text/javascript" src="../../script/menu.js"></script>
+</head>
+
+<body>
+<div id="languageSelectionDivision" class="mainDivision">
+    <div id="languageSelectionSubdivision">
+        <label for="language"></label>
+        <select id="language" onchange="if(this.options[this.options.selectedIndex].value==='English'){window.alert('英文网站正在建设中！ \nEnglish website is under construction!')}">
+            <option value='Chinese'>中文</option>
+            <option value='English'>English</option>
+        </select>
+    </div>
+</div>
+
+<div id="navigationDivision" class="mainDivision">
+    <div id="navigation">
+        <span><a href="../../index.html">主页</a></span>
+        <span><strong>博文</strong></span>
+    </div>
+</div>
+
+<div id="homepageLogoDivision" class="mainDivision">
+    <div id="homepageLogoSubdivision">
+        <div id="logo"></div>
+        <div id="websiteDescription">
+            <h3>YOUSEN'S BLOGS</h3>
+        </div>
+    </div>
+</div>
+
+<div id="blogListDivision" class="mainDivision">
+    <div id="blogListLeft">
+        <div id="portrait">
+        </div>
+        <div id="menu">
+            <p><a id="hc" href="../../bloglist.html#html-css"></a></p>
+            <p><a id="ac" href="../../bloglist.html#css-advanced"></a></p>
+            <p><a id="j" href="../../bloglist.html#javascript"></a></p>
+            <p><a id="r" href="../../bloglist.html#react"></a></p>
+            <p><a id="bn" href="../../bloglist.html#browser-network"></a></p>
+            <p><a id="p" href="../../bloglist.html#performance"></a></p>
+            <p><a id="d" href="../../bloglist.html#design"></a></p>
+            <p><a id="s" href="../../bloglist.html#security"></a></p>
+        </div>
+    </div>
+    <div id="blog">
+        <article>
+            <h1>XSS攻击</h1>
+            <p></p>
+        </article>
+    </div>
+</div>
+
+<div id="interactionDivision" class="mainDivision">
+    <div id="commentSubdivision">
+        <h1>留言</h1>
+        <hr>
+        <div id="latest" class="remark">
+            <div id="avatarContainer">
+                <img src="../../asset/smAvatar.jpg" alt="sm's avatar" id="avatar">
+            </div>
+            <div id="latestContainer">
+                <h3 id="latestID">id: sm聚聚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间：北京时间 2019年10月7日 19:12:26</h3>
+                <p id="latestRemark">精品课程我带你飞！</p>
+            </div>
+        </div>
+    </div>
+    <div id="commentMakerSubdivision">
+        <form>
+            自定义id:&nbsp;
+            <label for="commenter"></label>
+            <input type="text" id="commenter" onfocus="this.value=''" onblur="if(this.value==='')this.value='匿名用户'">
+            <hr>
+            <label for="commentText"></label>
+            <textarea cols="88" rows="4" id="commentText" placeholder="请输入评论"></textarea>
+            <hr>
+            <input type="button" id="commentButton" value="评论" name="commentButton" onclick="blogComment()" style="background-color: white">
+        </form>
+    </div>
+</div>
+
+<div id="footerDivision" class="mainDivision">
+    <div id="footer">
+        <footer>
+            <span>&copy;Yousen</span>
+        </footer>
+    </div>
+</div>
+
+<script type="text/javascript">fillMenu()</script>
+</body>
+
+</html>

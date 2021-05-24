@@ -1,0 +1,11 @@
+article h1 {
+    text-align: center;
+}
+
+article p{
+    text-indent: 4ch;
+}
+
+article blockquote{
+    background-color: #555;
+}

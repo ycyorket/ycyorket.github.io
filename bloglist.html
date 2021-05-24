@@ -1,90 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 
 <head>
-    <title>优森的个人主页</title>
+    <title>优森的博文</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="homepage.css">
-    <link rel="stylesheet" type="text/css" href="bloglist.css">
-    <script type="text/javascript">
-    </script>
+    <link rel="stylesheet" type="text/css" href="style/blog.css">
+    <script type="text/javascript" src="script/util.js"></script>
+    <script type="text/javascript" src="script/menu.js"></script>
 </head>
 
 <body>
-<div id="languageSelectionDivision" class="mainDivision">
+    <div id="languageSelectionDivision" class="mainDivision">
     <div id="languageSelectionSubdivision">
-        <select onchange="if(this.options[this.options.selectedIndex].value=='English'){window.alert('英文网站正在建设中！ \nEnglish website is under construction!')}">
+        <label for="language"></label>
+        <select id="language" onchange="if(this.options[this.options.selectedIndex].value==='English'){window.alert('英文网站正在建设中！ \nEnglish website is under construction!')}">
             <option value='Chinese'>中文</option>
             <option value='English'>English</option>
         </select>
     </div>
 </div>
 
-<div id="navigationDivision" class="mainDivision">
-    <div id="navigation">
-            <span>
-				<a href="index.html"><span onclick="window.alert('静态网页是无法登入登出的')">登出</span></a>
-            <strong>主页</strong>
-            <a href="bloglist.html"><span>博文</span></a>
-            </span>
-    </div>
-</div>
-
-<div id="homepageLogoDivision" class="mainDivision">
-    <div id="homepageLogoSubdivision">
-        <div id="logo"></div>
-        <div id="websiteDiscription">
-            <h3>YOUSEN'S BLOGS</h3>
+    <div id="navigationDivision" class="mainDivision">
+        <div id="navigation">
+                <span><a href="index.html">主页</a></span>
+                <span><strong>博文</strong></span>
         </div>
     </div>
-</div>
 
-<div id="blogListDivision" class="mainDivision">
-    <div id="portrait">
-    </div>
-    <div id="blogList">
-        <article>
-            <h1>HTML与CSS</h1>
-            <p>CSS选择器</p>
-            <h1>Javascript</h1>
-            <p>Promise初探</p>
-            <h1>React</h1>
-            <p>React生命周期</p>
-            <h1>网络</h1>
-            <p>常见状态码</p>
-        </article>
-    </div>
-</div>
-
-<div id="interactionDivision" class="mainDivision">
-    <div id="commentSubdivision">
-        <h1>留言</h1>
-        <hr>
-        <div id="latest" class="remark">
-            <img src="img/smAvatar.jpg" id="avatar">
-            <h3 id="latestID">id: sm聚聚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间：北京时间 2019年10月7日 19:12:26</h3>
-            <p id="latestRemark">精品课程我带你飞！</p>
+    <div id="homepageLogoDivision" class="mainDivision">
+        <div id="homepageLogoSubdivision">
+            <div id="logo"></div>
+            <div id="websiteDescription">
+                <h3>YOUSEN'S BLOGS</h3>
+            </div>
         </div>
     </div>
-    <div id="commentMakerSubdivision">
-        <form>
-            自定义id:&nbsp;
-            <input type="text" id="commenter" onfocus="this.value=''" onblur="if(this.value=='')this.value=thisID">
-            <hr>
-            <textarea cols="88" rows="4" id="commentText" placeholder="请输入评论"></textarea>
-            <hr>
-            <input type="button" id="commentButton" value="评论" name="commentButton" onclick="comment()" style="background-color: white">
-        </form>
-    </div>
-</div>
 
-<div id="footerDivision" class="mainDivision">
-    <div id="footer">
-        <footer>
-            <span>&copy;Yousen</span>
-        </footer>
+    <div id="blogListDivision" class="mainDivision">
+        <div id="blogListLeft">
+            <div id="portrait">
+            </div>
+            <div id="menu">
+                <p><a id="hc" href="#html-css"></a></p>
+                <p><a id="ac" href="#css-advanced"></a></p>
+                <p><a id="j" href="#javascript"></a></p>
+                <p><a id="r" href="#react"></a></p>
+                <p><a id="bn" href="#browser-network"></a></p>
+                <p><a id="p" href="#performance"></a></p>
+                <p><a id="d" href="#design"></a></p>
+                <p><a id="s" href="#security"></a></p>
+            </div>
+        </div>
+        <div id="blogList">
+            <article>
+                <h1><a name="html-css">HTML与CSS</a></h1>
+                <p><a href="blogs/html-css/label.html">标签</a></p>
+                <h1><a name="css-advanced">CSS进阶</a></h1>
+                <p><a href="blogs/css-advanced/multiple-border.html">多重边框</a></p>
+                <h1><a name="javascript">Javascript</a></h1>
+                <p><a href="blogs/javascript/introduction-to-promise.html">Promise初探</a></p>
+                <h1><a name="react">React</a></h1>
+                <p><a href="blogs/react/react-lifecycle.html">React生命周期</a></p>
+                <h1><a name="browser-network">浏览器与网络</a></h1>
+                <p><a href="blogs/browser-network/http-status-code.html">常见http状态码</a></p>
+                <p><a href="blogs/browser-network/cross-domain-issue.html">跨域问题</a></p>
+                <h1><a name="performance">性能</a></h1>
+                <p><a href="blogs/performance/repaint-and-reflow.html">重绘与重排</a></p>
+                <h1><a name="design">设计</a></h1>
+                <p><a href="blogs/design/creational-pattern.html">创建型模式</a></p>
+                <h1><a name="security">web安全</a></h1>
+                <p><a href="blogs/security/xss.html">XSS攻击</a></p>
+            </article>
+        </div>
     </div>
-</div>
+
+    <div id="interactionDivision" class="mainDivision">
+        <div id="commentSubdivision">
+            <h1>留言</h1>
+            <hr>
+            <div id="latest" class="remark">
+                <div id="avatarContainer">
+                    <img src="asset/smAvatar.jpg" alt="sm's avatar" id="avatar">
+                </div>
+                <div id="latestContainer">
+                    <h3 id="latestID">id: sm聚聚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间：北京时间 2019年10月7日 19:12:26</h3>
+                    <p id="latestRemark">精品课程我带你飞！</p>
+                </div>
+            </div>
+        </div>
+        <div id="commentMakerSubdivision">
+            <form>
+                自定义id:&nbsp;
+                <label for="commenter"></label>
+                <input type="text" id="commenter" onfocus="this.value=''" onblur="if(this.value==='')this.value='匿名用户'">
+                <hr>
+                <label for="commentText"></label>
+                <textarea cols="88" rows="4" id="commentText" placeholder="请输入评论"></textarea>
+                <hr>
+                <input type="button" id="commentButton" value="评论" name="commentButton" onclick="comment()" style="background-color: white">
+            </form>
+        </div>
+    </div>
+
+    <div id="footerDivision" class="mainDivision">
+        <div id="footer">
+            <footer>
+                <span>&copy;Yousen</span>
+            </footer>
+        </div>
+    </div>
+    <script type="text/javascript">fillMenu()</script>
 </body>
 
 </html>
